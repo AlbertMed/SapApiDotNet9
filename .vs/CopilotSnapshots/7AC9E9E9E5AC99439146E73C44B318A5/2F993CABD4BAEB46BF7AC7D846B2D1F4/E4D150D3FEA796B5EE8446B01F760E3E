@@ -1,0 +1,17 @@
+﻿{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Database=MiBaseDeDatos;User Id=usuario;Password=clave;"
+  },
+  "SapSettings": {
+    "Server": "mi_servidor_sap",
+    "DbServerType": "MSSQL2017",
+    "CompanyDB": "mi_empresa"
+  }
+}

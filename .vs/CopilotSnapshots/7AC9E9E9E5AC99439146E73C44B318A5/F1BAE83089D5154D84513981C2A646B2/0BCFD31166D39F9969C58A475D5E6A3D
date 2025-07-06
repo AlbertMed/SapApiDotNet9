@@ -1,0 +1,10 @@
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace SapApiDotNet9.Controllers
+{
+    [ApiController]
+    [Route("[controller]")]
+    public class AuthController : ControllerBase
+    {
+    }
+}

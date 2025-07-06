@@ -1,0 +1,13 @@
+﻿namespace SapApiDotNet9.Services
+{
+    public interface ISapConnector
+    {
+        /// <summary>
+        /// Intenta conectar a SAP Business One usando la DI API.
+        /// </summary>
+        /// <param name="id">Usuario SAP</param>
+        /// <param name="password">Contraseña SAP</param>
+        /// <returns>Mensaje de éxito o error</returns>
+        string Connect(string id, string password);
+    }
+}

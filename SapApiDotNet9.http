@@ -1,0 +1,6 @@
+@SapApiDotNet9_HostAddress = http://localhost:5102
+
+GET {{SapApiDotNet9_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

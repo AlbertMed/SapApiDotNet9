@@ -1,0 +1,29 @@
+﻿using SAPbobsCOM;
+
+namespace SapApiDotNet9.Services
+{
+    public class SapConnectorReal : ISapConnector
+    {
+        public string Connect(string id, string password)
+        {
+            Company company = new Company();
+            company.UserName = id;
+            company.Password = password;
+            // Configuración adicional necesaria (servidor, licencia, etc.)
+            // company.Server = "<servidor>";
+            // company.DbServerType = BoDataServerTypes.dst_MSSQL2017; // O el que corresponda
+            // company.CompanyDB = "<nombre_bd>";
+            int result = company.Connect();
+            if (result == 0)
+            {
+                company.Disconnect();
+                return "Conexión a SAP exitosa";
+            }
+            else
+            {
+                company.GetLastError(out int errCode, out string errMsg);
+                return $"Error {errCode}: {errMsg}";
+            }
+        }
+    }
+}

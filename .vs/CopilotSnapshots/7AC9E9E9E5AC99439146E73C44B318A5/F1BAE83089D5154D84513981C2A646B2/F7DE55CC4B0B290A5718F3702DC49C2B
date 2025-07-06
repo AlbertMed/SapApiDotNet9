@@ -1,0 +1,7 @@
+﻿namespace SapApiDotNet9.Models
+{
+    public class User
+    {
+        // Eliminado: migrado a Minimal API en Program.cs
+    }
+}

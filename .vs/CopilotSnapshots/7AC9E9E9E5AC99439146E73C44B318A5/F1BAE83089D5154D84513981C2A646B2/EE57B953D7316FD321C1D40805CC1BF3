@@ -1,0 +1,19 @@
+﻿using Microsoft.Extensions.Configuration;
+
+namespace SapApiDotNet9.Services
+{
+    public class SapConnectorReal : ISapConnector
+    {
+        private readonly IConfiguration _configuration;
+
+        public SapConnectorReal(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
+        public string Connect(string id, string password)
+        {
+            return "Conexión a SAP exitosa";
+        }
+    }
+}

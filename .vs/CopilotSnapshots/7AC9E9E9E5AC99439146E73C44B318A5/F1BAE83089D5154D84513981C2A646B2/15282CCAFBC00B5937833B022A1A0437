@@ -1,0 +1,25 @@
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Hosting;
+
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+// Endpoint GET /hello
+app.MapGet("/hello", () => "Hello World from SAP API");
+
+// Endpoint POST /auth
+app.MapPost("/auth", async (HttpContext context) =>
+{
+    var data = await context.Request.ReadFromJsonAsync<AuthRequest>();
+    // Aquí puedes agregar la lógica real de conexión a SAP
+    // Por ejemplo, usando SAPbobsCOM si tienes la referencia COM
+    if (data?.Id == "usuario" && data?.Password == "clave")
+        return Results.Ok(new { message = "Conexión a SAP exitosa" });
+    else
+        return Results.BadRequest(new { message = "Error de autenticación" });
+});
+
+app.Run();
+
+record AuthRequest(string Id, string Password);

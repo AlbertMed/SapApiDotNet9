@@ -1,0 +1,33 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using SapApiDotNet9.Services;
+
+namespace SapApiDotNet9.Controllers
+{
+    [ApiController]
+    [Route("[controller]")]
+    public class AuthController : ControllerBase
+    {
+        private readonly ISapConnector _sapConnector;
+        public AuthController(ISapConnector sapConnector)
+        {
+            _sapConnector = sapConnector;
+        }
+
+        [HttpPost]
+        [Route("/auth")]
+        public IActionResult Auth([FromBody] AuthRequest request)
+        {
+            var result = _sapConnector.Connect(request.Id, request.Password);
+            if (result.Contains("exitosa"))
+                return Ok(new { message = result });
+            else
+                return BadRequest(new { message = result });
+        }
+    }
+
+    public class AuthRequest
+    {
+        public string Id { get; set; }
+        public string Password { get; set; }
+    }
+}
