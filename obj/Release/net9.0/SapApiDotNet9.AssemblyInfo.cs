@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SapApiDotNet9")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8adbee0896fd8b821621144184a02453b1912ec2")]
 [assembly: System.Reflection.AssemblyProductAttribute("SapApiDotNet9")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SapApiDotNet9")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
