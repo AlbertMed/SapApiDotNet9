@@ -38,7 +38,7 @@ app.MapGet("/entrada_material_inspeccion/{id:int}", async (int id) =>
         CommandType = CommandType.StoredProcedure
     };
     // Agregar parámetro @Id recibido en la URL
-    command.Parameters.AddWithValue("@Id", id);
+    command.Parameters.AddWithValue("@NumeroEntrada", id);
 
     await connection.OpenAsync();
     using var reader = await command.ExecuteReaderAsync();
